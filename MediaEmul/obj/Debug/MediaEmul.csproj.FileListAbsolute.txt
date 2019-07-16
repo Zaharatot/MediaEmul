@@ -1,0 +1,11 @@
+H:\MediaEmul\MediaEmul\bin\Debug\MediaEmul.exe.config
+H:\MediaEmul\MediaEmul\bin\Debug\MediaEmul.exe
+H:\MediaEmul\MediaEmul\bin\Debug\MediaEmul.pdb
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Properties.Resources.resources
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.csproj.GenerateResource.cache
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.csproj.CoreCompileInputs.cache
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.exe
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.pdb
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Controls.ClipboardRow.resources
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Forms.main.resources
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Forms.multiClip.resources
