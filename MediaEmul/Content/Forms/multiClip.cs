@@ -70,11 +70,12 @@ namespace MediaEmul.Content.Forms
         private void initRows()
         {
             //Инициализируем строки буфера обмена
-            rows = new ClipboardRow[countClipboards + 1];
+            rows = new ClipboardRow[countClipboards];
             //Проходимся по всем буферам обмена
-            for (int i = countClipboards; i >= 0; i--)
+            for (int i = countClipboards - 1; i >= 0; i--)
                 //Добавляем новую строку
                 rows[i] = addRow(i);
+
         }
 
         /// <summary>
@@ -118,5 +119,20 @@ namespace MediaEmul.Content.Forms
             e.Cancel = disallowExit;
         }
 
+        /// <summary>
+        /// Обновляем значение по id строки
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="text"></param>
+        public void setValueFromRowId(int id, string text)
+        {
+            //Выполняем в основном потоке
+            this.BeginInvoke(new Action(() => { 
+                //Если id находится в рамках
+                if ((id >= 0) && (id < countClipboards))
+                    //Обновляем текст
+                    rows[id].value = text;
+            }));
+        }
     }
 }

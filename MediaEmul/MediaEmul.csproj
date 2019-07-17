@@ -49,7 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\Clases\DataClases\enums.cs" />
+    <Compile Include="Content\Clases\DataClases\events.cs" />
+    <Compile Include="Content\Clases\WorkClases\ClipboardWorker.cs" />
     <Compile Include="Content\Clases\WorkClases\KeyboardHook.cs" />
+    <Compile Include="Content\Clases\WorkClases\MainWorker.cs" />
     <Compile Include="Content\Controls\ClipboardRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,8 +109,6 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Clases\DataClases\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

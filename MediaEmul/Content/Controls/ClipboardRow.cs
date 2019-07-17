@@ -42,12 +42,8 @@ namespace MediaEmul.Content.Controls
             set
             {
                 id = value;
-                //-1 - это значение для оригинального буфера
-                if (id == -1)
-                    infoLabel.Text = "Буфер";
                 //Проставляем красиво подсказку
-                else
-                    infoLabel.Text = $"Ctrl + {id}";
+                infoLabel.Text = $"Ctrl + {id + 1}";
             }
         }
 

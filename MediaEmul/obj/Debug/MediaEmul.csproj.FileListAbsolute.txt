@@ -9,3 +9,4 @@ H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.pdb
 H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Controls.ClipboardRow.resources
 H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Forms.main.resources
 H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.Content.Forms.multiClip.resources
+H:\MediaEmul\MediaEmul\obj\Debug\MediaEmul.csprojAssemblyReference.cache

@@ -21,11 +21,10 @@ namespace MediaEmul.Content.Forms
         /// </summary>
         private multiClip mcf;
 
-
         /// <summary>
-        /// Класс эмулятора медиаклавишь
+        /// Основной рабочий класс
         /// </summary>
-        private EmulatorWorker ew;
+        private MainWorker mw;
 
         /// <summary>
         /// Флаг запрета закрытия формы
@@ -51,8 +50,8 @@ namespace MediaEmul.Content.Forms
             //Инициализируем форму мульти буфера обмена
             mcf = new multiClip();
 
-            //Инициализируем эмуляцию медиаклавишь
-            ew = new EmulatorWorker();
+            //Инициализируем основной рабочий класс
+            mw = new MainWorker();
 
             //Закрытие формы запрещено по дефолту
             disallowExit = true;
@@ -66,6 +65,12 @@ namespace MediaEmul.Content.Forms
         /// </summary>
         private void initEvents()
         {
+
+            //Добавляем обработчик события обновления буфера обмена
+            mw.onUpdateBuffer += Mw_onUpdateBuffer;
+            //Добавляем обработчик события вызова формы буферов
+            mw.onShowbufferForm += Mw_onShowbufferForm;
+
             //Добавляем обработчик закрытия формы
             this.FormClosing += Main_FormClosing;
             //Добавляем обработчик завершения закрытия формы
@@ -75,14 +80,32 @@ namespace MediaEmul.Content.Forms
         }
 
         /// <summary>
+        /// Обработчик события вызова формы буферов
+        /// </summary>
+        private void Mw_onShowbufferForm()
+        {
+            //Отображаем форму мульти буфера обмена
+            mcf.Show();
+        }
+
+        /// <summary>
+        /// Обработчик события обновления буфера обмена
+        /// </summary>
+        /// <param name="text">Текст буфера</param>
+        /// <param name="id">Id буфера</param>
+        private void Mw_onUpdateBuffer(string text, int id)
+        {
+            //Обновляем значения на форме
+            mcf.setValueFromRowId(id, text);
+        }
+
+        /// <summary>
         /// Обработчик завершения закрытия формы
         /// </summary>
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Если эмулятор был инициализован
-            if(ew != null)
-                //Закрываем эмулятор
-                ew.Dispose();
+            //Очищаем ресурсы основного рабочего класса
+            mw.Dispose();
         }
 
         /// <summary>

@@ -11,13 +11,15 @@ namespace MediaEmul.Content.Clases.DataClases
     /// </summary>
     class enums
     {
-
         /// <summary>
-        /// Перечисление действий с буфером обмена
+        /// Перечисление типов данных взятых из буфера обмена
         /// </summary>
-        public enum clipboardActions
+        public enum clipboardDataType
         {
-
+            Текст, 
+            Файлы,
+            Картинка,
+            Аудиопоток
         }
     }
 }
